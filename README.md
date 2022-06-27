@@ -1,7 +1,7 @@
 ### Member management application
 
 ```
-Build automation tool: Maven project
+Build automation tool: Maven
 Spring boot version: 2.7.1
 ```
 
