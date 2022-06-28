@@ -18,15 +18,13 @@ public class MemberConfig {
 			Member user01 = new Member(
 					"user01",
 					"user01@email.com",
-					LocalDate.of(2000, JANUARY, 5),
-					21
+					LocalDate.of(2000, JANUARY, 5)
 			);
 			
 			Member user02 = new Member(
 					"user02",
 					"user02@email.com",
-					LocalDate.of(2001, JANUARY, 5),
-					21
+					LocalDate.of(2001, JANUARY, 5)
 			);
 			
 			repository.saveAll(

@@ -1,13 +1,8 @@
 package com.example.demo.member;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table
@@ -26,6 +21,7 @@ public class Member {
 	private String name;
 	private String email;
 	private LocalDate dob;
+	@Transient
 	private Integer age;
 	
 	public Member() {
@@ -34,23 +30,19 @@ public class Member {
 	public Member(Long id,
 				   String name,
 				   String email,
-				   LocalDate dob,
-				   Integer age) {
+				   LocalDate dob) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.dob = dob;
-		this.age = age;
 	}
 	
 	public Member(String name,
 			   	   String email,
-			       LocalDate dob,
-			       Integer age) {
+			       LocalDate dob) {
 		this.name = name;
 		this.email = email;
 		this.dob = dob;
-		this.age = age;
 	}
 
 	public Long getId() {
@@ -86,7 +78,7 @@ public class Member {
 	}
 
 	public Integer getAge() {
-		return age;
+		return Period.between(this.dob, LocalDate.now()).getYears();
 	}
 
 	public void setAge(Integer age) {

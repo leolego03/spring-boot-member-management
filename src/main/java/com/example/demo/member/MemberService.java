@@ -20,4 +20,8 @@ public class MemberService {
 	public List<Member> getMembers() {
 		return memberRepository.findAll();
 	}
+
+	public void addNewMember(Member member) {
+		System.out.println(member);
+	}
 }
